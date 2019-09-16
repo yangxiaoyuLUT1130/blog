@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://yangxiaoyulut1130.github.io/./favicon.ico?v=1568642334600">
+<link rel="shortcut icon" href="https://yangxiaoyulut1130.github.io/./favicon.ico?v=1568642996403">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://yangxiaoyulut1130.github.io/./styles/main.css">
 
@@ -36,7 +36,7 @@
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://yangxiaoyulut1130.github.io/.">
-        <img src="https://yangxiaoyulut1130.github.io/./images/avatar.png?v=1568642334600" class="site-logo">
+        <img src="https://yangxiaoyulut1130.github.io/./images/avatar.png?v=1568642996403" class="site-logo">
         <h1 class="site-title">Mr. Yang&#39;s Scientific Calulation</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -102,7 +102,9 @@
             <div class="post-date">2019-09-16</div>
             
             <div class="post-content">
-              <p>二维问题中，扩散方程（传导方程）是一个平面的非稳态问题，对于该PDE方程的求解，由于边界条件的限制，往往很难得到解析解。采用有限元法求解非稳态问题时，方程的离散一般是采用空间半离散以及时间项的差分离散相结合的方式。对于空间来说，二维的抛物线方程在空间上是x-y平面上的问题，采用FEM的离散方法对方程先进行空间离散，得到一个关于时间的常微分方程，此时采用有限差分法的离散方式，将方程离散为上一时刻的场部分与下一时刻场分布的迭代关系式，初始场已知，通过每一次的迭代获得下一时刻的值，这是求解的方法与思路。</p>
+              <p>以二维的扩散问题为例，给出二维抛物线方程的有限元求解方法，依据Galerkin法对PDE进行空间离散，得到对应的等效积分弱的形式；利用有限差分的思想对时间项进行离散。</p>
+<!-- more -->
+<p>二维问题中，扩散方程（传导方程）是一个平面的非稳态问题，对于该PDE方程的求解，由于边界条件的限制，往往很难得到解析解。采用有限元法求解非稳态问题时，方程的离散一般是采用空间半离散以及时间项的差分离散相结合的方式。对于空间来说，二维的抛物线方程在空间上是x-y平面上的问题，采用FEM的离散方法对方程先进行空间离散，得到一个关于时间的常微分方程，此时采用有限差分法的离散方式，将方程离散为上一时刻的场部分与下一时刻场分布的迭代关系式，初始场已知，通过每一次的迭代获得下一时刻的值，这是求解的方法与思路。</p>
 <p>二维非稳态问题的控制方程为：</p>
 <p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mtable><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>(</mo><mfrac><mrow><msup><mi mathvariant="normal">∂</mi><mn>2</mn></msup><mi>ζ</mi></mrow><mrow><mi mathvariant="normal">∂</mi><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mi mathvariant="normal">∂</mi><mn>2</mn></msup><mi>ζ</mi></mrow><mrow><mi mathvariant="normal">∂</mi><msup><mi>y</mi><mn>2</mn></msup></mrow></mfrac><mo>)</mo><mo>=</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>ζ</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>t</mi></mrow></mfrac></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
 a^2(\frac{\partial ^{2} \zeta}{\partial x ^ 2} + \frac{\partial ^{2} \zeta}{\partial y ^ 2}) = \frac{\partial \zeta}{\partial t}
@@ -226,6 +228,18 @@ N_3(x, y) = \frac{1}{2 \cdot A} (\alpha_3 + \beta_3 x + \gamma_3 y)
 <p>上述的迭代公式即可获得整个时间段上的解答，特别需要注意的是，每一次的迭代计算后，都应该将边界条件进行一次重置，否则无法收敛。</p>
 
             </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://yangxiaoyulut1130.github.io/./tag/vQwVi8BBd" class="tag">
+                    Finite Element Method
+                  </a>
+                
+                  <a href="https://yangxiaoyulut1130.github.io/./tag/I7xFtyRe4" class="tag">
+                    Variational method
+                  </a>
+                
+              </div>
             
             
               <div class="next-post">

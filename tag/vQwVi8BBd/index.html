@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>变分法及变分原理 | Mr. Yang&#39;s Scientific Calulation</title>
+<title>Finite Element Method | Mr. Yang&#39;s Scientific Calulation</title>
 <meta name="description" content="This is a numerical analysis world!">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -13,12 +13,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://yangxiaoyulut1130.github.io/./styles/main.css">
 
-
-  
-    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
-  
-
-  
 
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -97,43 +91,29 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <div class="post-detail">
-            <h2 class="post-title">变分法及变分原理</h2>
-            <div class="post-date">2019-09-16</div>
-            
-            <div class="post-content">
-              <p>有限单元法的数学基础是变分原理，对于变分法以及PDE理论的理解，不仅仅从FEM法应用的角度去理解，更为广泛地是理解所要研究的物理问题（现象）的本质（数学本质）是什么。这里我会分享我在学习过程中的心得，以及一些我自己对于问题的理解</p>
- <!-- more --> 
-            </div>
-            
-              <div class="tag-container">
-                
-                  <a href="https://yangxiaoyulut1130.github.io/./tag/I7xFtyRe4" class="tag">
-                    Variational method
-                  </a>
-                
-              </div>
-            
-            
-              <div class="next-post">
-                <div class="next">下一篇</div>
-                <a href="https://yangxiaoyulut1130.github.io/./post/zhu-kong-kuo-zhang-yuan-li123">
-                  <h3 class="post-title">
-                    柱孔扩张原理
-                  </h3>
+          <h2 class="current-tag">标签: Finite Element Method</h2>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://yangxiaoyulut1130.github.io/./post/er-wei-kuo-san-fang-cheng-de-you-xian-yuan-fa-ji-suan">
+                  <h2 class="post-title">二维扩散方程的有限元法计算</h2>
                 </a>
+                <div class="post-date">
+                  2019-09-16
+                </div>
+                <div class="post-abstract">
+                  <p>以二维的扩散问题为例，给出二维抛物线方程的有限元求解方法，依据Galerkin法对PDE进行空间离散，得到对应的等效积分弱的形式；利用有限差分的思想对时间项进行离散。</p>
+
+                </div>
               </div>
-            
-
-            
               
-                <div id="gitalk-container" data-aos="fade-in"></div>
-              
+            </article>
+          
 
-              
-            
-
-          </div>
+          <div class="pagination-container">
+  
+  
+</div>
 
         </div>
       </div>
@@ -155,29 +135,6 @@ var app = new Vue({
 })
 
 </script>
-
-
-
-  
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-    <script>
-
-      var gitalk = new Gitalk({
-        clientID: '0757169e03fe09bf6c3d',
-        clientSecret: 'fd88ba47aa95b819baa3134ed614541a83d74f39',
-        repo: 'yangxiaoyulut1130.github.io',
-        owner: 'Tony',
-        admin: ['Tony'],
-        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-        distractionFreeMode: false  // Facebook-like distraction free mode
-      })
-
-      gitalk.render('gitalk-container')
-
-    </script>
-  
-
-  
 
 
 

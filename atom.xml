@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yangxiaoyulut1130.github.io/.</id>
     <title>Mr. Yang&apos;s Scientific Calulation</title>
-    <updated>2019-09-16T14:02:10.175Z</updated>
+    <updated>2019-09-16T14:10:01.825Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yangxiaoyulut1130.github.io/."/>
     <link rel="self" href="https://yangxiaoyulut1130.github.io/./atom.xml"/>
@@ -16,6 +16,10 @@
         <link href="https://yangxiaoyulut1130.github.io/./post/er-wei-kuo-san-fang-cheng-de-you-xian-yuan-fa-ji-suan">
         </link>
         <updated>2019-09-16T13:56:54.000Z</updated>
+        <summary type="html"><![CDATA[<p>以二维的扩散问题为例，给出二维抛物线方程的有限元求解方法，依据Galerkin法对PDE进行空间离散，得到对应的等效积分弱的形式；利用有限差分的思想对时间项进行离散。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>以二维的扩散问题为例，给出二维抛物线方程的有限元求解方法，依据Galerkin法对PDE进行空间离散，得到对应的等效积分弱的形式；利用有限差分的思想对时间项进行离散。</p>
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[变分法及变分原理]]></title>
