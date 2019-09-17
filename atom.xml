@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yangxiaoyulut1130.github.io/.</id>
-    <title>Mr. Yang&apos;s Scientific Calulation</title>
-    <updated>2019-09-17T01:57:02.147Z</updated>
+    <title>Mr. Yang&apos;s Scientific Calculation</title>
+    <updated>2019-09-17T03:17:14.971Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yangxiaoyulut1130.github.io/."/>
     <link rel="self" href="https://yangxiaoyulut1130.github.io/./atom.xml"/>
-    <subtitle>This is a numerical analysis world!</subtitle>
+    <subtitle>life is short, you need Python!</subtitle>
     <logo>https://yangxiaoyulut1130.github.io/./images/avatar.png</logo>
     <icon>https://yangxiaoyulut1130.github.io/./favicon.ico</icon>
-    <rights>All rights reserved 2019, Mr. Yang&apos;s Scientific Calulation</rights>
+    <rights>All rights reserved 2019, Mr. Yang&apos;s Scientific Calculation</rights>
 </feed>
