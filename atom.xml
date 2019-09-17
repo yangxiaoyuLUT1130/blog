@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yangxiaoyulut1130.github.io/.</id>
     <title>Mr. Yang&apos;s Scientific Calculation</title>
-    <updated>2019-09-17T12:29:13.708Z</updated>
+    <updated>2019-09-17T15:14:26.248Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yangxiaoyulut1130.github.io/."/>
     <link rel="self" href="https://yangxiaoyulut1130.github.io/./atom.xml"/>
@@ -10,4 +10,15 @@
     <logo>https://yangxiaoyulut1130.github.io/./images/avatar.png</logo>
     <icon>https://yangxiaoyulut1130.github.io/./favicon.ico</icon>
     <rights>All rights reserved 2019, Mr. Yang&apos;s Scientific Calculation</rights>
+    <entry>
+        <title type="html"><![CDATA[Markdown入门]]></title>
+        <id>https://yangxiaoyulut1130.github.io/./post/markdown-ru-men</id>
+        <link href="https://yangxiaoyulut1130.github.io/./post/markdown-ru-men">
+        </link>
+        <updated>2019-09-17T13:37:27.000Z</updated>
+        <summary type="html"><![CDATA[<p>在平时的文字记录时，office等一些“富文本”软件，用于记录自己的学习笔记时，会使得自己很大一部分时间用于版本，并且对于数学公式的支持也不够友好。Mrkdon是一种“标记语言”，语法相比于html而言，十分简洁。易于学习，记录效率高，能够让你专注于写作本身。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>在平时的文字记录时，office等一些“富文本”软件，用于记录自己的学习笔记时，会使得自己很大一部分时间用于版本，并且对于数学公式的支持也不够友好。Mrkdon是一种“标记语言”，语法相比于html而言，十分简洁。易于学习，记录效率高，能够让你专注于写作本身。</p>
+]]></content>
+    </entry>
 </feed>
