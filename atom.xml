@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yangxiaoyulut1130.github.io/.</id>
     <title>Mr. Yang&apos;s Scientific Calulation</title>
-    <updated>2019-09-16T14:22:01.809Z</updated>
+    <updated>2019-09-17T01:03:48.221Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yangxiaoyulut1130.github.io/."/>
     <link rel="self" href="https://yangxiaoyulut1130.github.io/./atom.xml"/>
@@ -10,29 +10,4 @@
     <logo>https://yangxiaoyulut1130.github.io/./images/avatar.png</logo>
     <icon>https://yangxiaoyulut1130.github.io/./favicon.ico</icon>
     <rights>All rights reserved 2019, Mr. Yang&apos;s Scientific Calulation</rights>
-    <entry>
-        <title type="html"><![CDATA[二维扩散方程的有限元法计算]]></title>
-        <id>https://yangxiaoyulut1130.github.io/./post/er-wei-kuo-san-fang-cheng-de-you-xian-yuan-fa-ji-suan</id>
-        <link href="https://yangxiaoyulut1130.github.io/./post/er-wei-kuo-san-fang-cheng-de-you-xian-yuan-fa-ji-suan">
-        </link>
-        <updated>2019-09-16T13:56:54.000Z</updated>
-        <summary type="html"><![CDATA[<p>以二维的扩散问题为例，给出二维抛物线方程的有限元求解方法，依据Galerkin法对PDE进行空间离散，得到对应的等效积分弱的形式；利用有限差分的思想对时间项进行离散。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>以二维的扩散问题为例，给出二维抛物线方程的有限元求解方法，依据Galerkin法对PDE进行空间离散，得到对应的等效积分弱的形式；利用有限差分的思想对时间项进行离散。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[变分法及变分原理]]></title>
-        <id>https://yangxiaoyulut1130.github.io/./post/bian-fen-fa-ji-bian-fen-yuan-li</id>
-        <link href="https://yangxiaoyulut1130.github.io/./post/bian-fen-fa-ji-bian-fen-yuan-li">
-        </link>
-        <updated>2019-09-16T13:35:43.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[柱孔扩张原理]]></title>
-        <id>https://yangxiaoyulut1130.github.io/./post/zhu-kong-kuo-zhang-yuan-li123</id>
-        <link href="https://yangxiaoyulut1130.github.io/./post/zhu-kong-kuo-zhang-yuan-li123">
-        </link>
-        <updated>2019-09-16T13:27:50.000Z</updated>
-    </entry>
 </feed>
