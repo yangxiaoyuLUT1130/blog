@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yangxiaoyulut1130.github.io/.</id>
     <title>Mr. Yang&apos;s Scientific Calculation</title>
-    <updated>2019-09-17T08:59:10.909Z</updated>
+    <updated>2019-09-17T09:52:01.639Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yangxiaoyulut1130.github.io/."/>
     <link rel="self" href="https://yangxiaoyulut1130.github.io/./atom.xml"/>
-    <subtitle>&lt;p&gt;此生须臾如朝露，缱绻枝头待晚风&lt;br&gt;Life is short, you need Python!&lt;/p&gt;</subtitle>
+    <subtitle>&lt;p&gt;此生須臾如朝露，繾綣枝頭待晚風&lt;br&gt;Life is short, you need Python!&lt;/p&gt;</subtitle>
     <logo>https://yangxiaoyulut1130.github.io/./images/avatar.png</logo>
     <icon>https://yangxiaoyulut1130.github.io/./favicon.ico</icon>
     <rights>All rights reserved 2019, Mr. Yang&apos;s Scientific Calculation</rights>
