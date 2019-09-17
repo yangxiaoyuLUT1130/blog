@@ -1,31 +1,17 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" >
-
-<title>二维扩散方程的有限元法计算 | Mr. Yang&#39;s Scientific Calculation</title>
-<meta name="description" content="Life is short, you need Python!
-此生须臾如朝露，缱绻枝头待晚风">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://yangxiaoyulut1130.github.io/./favicon.ico?v=1568697383131">
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mr. Yang&#39;s Scientific Calculation</title>
+<meta name="description" content="<p>此生须臾如朝露，缱绻枝头待晚风<br>Life is short, you need Python!</p>" />
+<link rel="shortcut icon" href="https://yangxiaoyulut1130.github.io/./favicon.ico?v=1568698370406">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
 <link rel="stylesheet" href="https://yangxiaoyulut1130.github.io/./styles/main.css">
-
-
-  
-    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
-  
-
-  
-
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<link rel="alternate" type="application/atom+xml" title="Mr. Yang&#39;s Scientific Calculation - Atom Feed" href="https://yangxiaoyulut1130.github.io/./atom.xml">
 
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148165955-1"></script>
@@ -40,80 +26,82 @@
 
   </head>
   <body>
-    <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://yangxiaoyulut1130.github.io/.">
-        <img src="https://yangxiaoyulut1130.github.io/./images/avatar.png?v=1568697383131" class="site-logo">
-        <h1 class="site-title">Mr. Yang&#39;s Scientific Calculation</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
+    <div id="app" class="main px-4 flex flex-col lg:flex-row">
+      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
+  <div class="lg:sticky top-0">
+    <div class="sidebar-content">
+      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
+        <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
+        <a href="https://yangxiaoyulut1130.github.io/.">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://yangxiaoyulut1130.github.io/./images/avatar.png?v=1568698370406" alt="">
+        </a>
+        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">Mr. Yang&#39;s Scientific Calculation</h1>
       </div>
-    </div>
-    <div>
       
-        
-          <a href="/" class="site-nav">
-            首页
-          </a>
-        
+        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
+          <p class="my-4 text-gray-600 font-light hidden lg:block">
+            文章目录
+          </p>
+          <div class="toc-container hidden lg:block">
+            <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E7%A9%BA%E9%97%B4%E7%A6%BB%E6%95%A3">空间离散</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
       
-        
-          <a href="/archives" class="site-nav">
-            归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="site-nav">
-            标签
-          </a>
-        
-      
-        
-          <a href="/post/about" class="site-nav">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <div class="site-description">
-      Life is short, you need Python!
-此生须臾如朝露，缱绻枝头待晚风
-    </div>
-    <div class="site-footer">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://yangxiaoyulut1130.github.io/./atom.xml" target="_blank">RSS</a>
     </div>
   </div>
 </div>
 
-
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          <div class="post-detail">
-            <h2 class="post-title">二维扩散方程的有限元法计算</h2>
-            <div class="post-date">2019-09-16</div>
-            
-            <div class="post-content">
-              <p>以二维的扩散问题为例，给出二维抛物线方程的有限元求解方法，依据Galerkin法对PDE进行空间离散，得到对应的等效积分弱的形式；利用有限差分的思想对时间项进行离散。</p>
+<div class="menu-container">
+  <i class="remixicon-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
+  <div>
+    
+      
+        <a href="/" class="menu" style="animation-delay: 0s">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu" style="animation-delay: 0.2s">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu" style="animation-delay: 0.4s">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu" style="animation-delay: 0.6000000000000001s">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="site-footer">
+    <div class="py-4 text-gray-700">Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></div>
+    <a class="rss" href="https://yangxiaoyulut1130.github.io/./atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+<div class="mask" onclick="closeMenu()">
+</div>
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
+        <h1 class="text-3xl font-bold lg:mt-16">二维扩散方程的有限元法计算</h1>
+        <div class="text-sm text-gray-700 lg:my-8">
+          2019-09-16 / 40 min read
+        </div>
+        
+        <div class="post-content yue">
+          <p>以二维的扩散问题为例，给出二维抛物线方程的有限元求解方法，依据Galerkin法对PDE进行空间离散，得到对应的等效积分弱的形式；利用有限差分的思想对时间项进行离散。</p>
 <!-- more -->
 <p>二维问题中，扩散方程（传导方程）是一个平面的非稳态问题，对于该PDE方程的求解，由于边界条件的限制，往往很难得到解析解。采用有限元法求解非稳态问题时，方程的离散一般是采用空间半离散以及时间项的差分离散相结合的方式。对于空间来说，二维的抛物线方程在空间上是x-y平面上的问题，采用FEM的离散方法对方程先进行空间离散，得到一个关于时间的常微分方程，此时采用有限差分法的离散方式，将方程离散为上一时刻的场部分与下一时刻场分布的迭代关系式，初始场已知，通过每一次的迭代获得下一时刻的值，这是求解的方法与思路。</p>
 <p>二维非稳态问题的控制方程为：</p>
@@ -238,78 +226,154 @@ N_3(x, y) = \frac{1}{2 \cdot A} (\alpha_3 + \beta_3 x + \gamma_3 y)
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.04633em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.36033em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">Δ</span><span class="mord mathdefault">t</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07378em;">ζ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.07378em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.04633em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.36033em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">Δ</span><span class="mord mathdefault">t</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05017em;">B</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07378em;">ζ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:-0.07378em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span></span></span></span></span></p>
 <p>上述的迭代公式即可获得整个时间段上的解答，特别需要注意的是，每一次的迭代计算后，都应该将边界条件进行一次重置，否则无法收敛。</p>
 
-            </div>
-            
-              <div class="tag-container">
-                
-                  <a href="https://yangxiaoyulut1130.github.io/./tag/vQwVi8BBd" class="tag">
-                    Finite Element Method
-                  </a>
-                
-                  <a href="https://yangxiaoyulut1130.github.io/./tag/I7xFtyRe4" class="tag">
-                    Variational method
-                  </a>
-                
-              </div>
-            
-            
-
-            
-              
-                <div id="gitalk-container" data-aos="fade-in"></div>
-              
-
-              
-            
-
-          </div>
-
         </div>
-      </div>
-    </div>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://yangxiaoyulut1130.github.io/./tag/vQwVi8BBd">
+            <span class="flex-auto">Finite Element Method</span>
+          </a>
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://yangxiaoyulut1130.github.io/./tag/I7xFtyRe4">
+            <span class="flex-auto">Variational method</span>
+          </a>
+        
 
-<script type="application/javascript">
 
-AOS.init();
+        <div class="flex justify-between py-8">
+          
 
-hljs.initHighlightingOnLoad()
+          
+        </div>
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '3721a230225dac73491b',
+    clientSecret: '1aedda4b7c713164789260048beb23e9d11fdfa7',
+    repo: 'yangxiaoyulut1130.github.io',
+    owner: 'yangxiaoyulut1130',
+    admin: ['yangxiaoyulut1130'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
 
 </script>
 
+          
+
+          
+        
+
+      </div>
+    </div>
+
+    <script src="https://yangxiaoyulut1130.github.io/./media/prism.js"></script>  
+<script>
+
+Prism.highlightAll()
+
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+// This should probably be throttled.
+// Especially because it triggers during smooth scrolling.
+// https://lodash.com/docs/4.17.10#throttle
+// You could do like...
+// window.addEventListener("scroll", () => {
+//    _.throttle(doThatStuff, 100);
+// });
+// Only not doing it here to keep this Pen dependency-free.
+
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          link.classList.add("current");
+        } else {
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
 
 
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target
+          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
+          lazyImage.classList.remove("lazy")
+          lazyImageObserver.unobserve(lazyImage)
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage)
+    })
+  } else {
+    // Possibly fall back to a more compatible method here
+  }
+});
+
+const menuContainer = document.querySelector('.menu-container')
+const menus = document.querySelectorAll('.menu-container .menu')
+const mask = document.querySelector('.mask')
+const contentWrapper = document.querySelector('.content-wrapper')
+const latestArticle = document.querySelector('.latest-article')
+const readMore = document.querySelector('.read-more')
+const indexPage = document.querySelector('.index-page')
+
+const isHome = location.pathname === '/'
+if (latestArticle) {
+  latestArticle.style.display = isHome ? 'block' : 'none'
+  readMore.style.display = isHome ? 'block' : 'none'
+  indexPage.style.display = isHome ? 'none' : 'block'
+}
+
+const openMenu = () => {
+  menuContainer.classList.add('open')
+  menus.forEach(menu => {
+    menu.classList.add('animated', 'fadeInLeft')
+  })
+  mask.classList.add('open')
+  contentWrapper.classList.add('is-second')
+}
+
+const closeMenu = () => {
+  menuContainer.classList.remove('open')
+  menus.forEach(menu => {
+    menu.classList.remove('animated', 'fadeInLeft')
+  })
+  mask.classList.remove('open')
+  contentWrapper.classList.remove('is-second')
+}
+</script>
   
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-    <script>
-
-      var gitalk = new Gitalk({
-        clientID: '3721a230225dac73491b',
-        clientSecret: '1aedda4b7c713164789260048beb23e9d11fdfa7',
-        repo: 'yangxiaoyulut1130.github.io',
-        owner: 'yangxiaoyulut1130',
-        admin: ['yangxiaoyulut1130'],
-        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-        distractionFreeMode: false  // Facebook-like distraction free mode
-      })
-
-      gitalk.render('gitalk-container')
-
-    </script>
-  
-
-  
-
-
-
-
   </body>
 </html>

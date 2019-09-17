@@ -1,31 +1,17 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" >
-
-<title>柱孔扩张原理 | Mr. Yang&#39;s Scientific Calculation</title>
-<meta name="description" content="Life is short, you need Python!
-此生须臾如朝露，缱绻枝头待晚风">
-
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://yangxiaoyulut1130.github.io/./favicon.ico?v=1568697383131">
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mr. Yang&#39;s Scientific Calculation</title>
+<meta name="description" content="<p>此生须臾如朝露，缱绻枝头待晚风<br>Life is short, you need Python!</p>" />
+<link rel="shortcut icon" href="https://yangxiaoyulut1130.github.io/./favicon.ico?v=1568698370406">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
 <link rel="stylesheet" href="https://yangxiaoyulut1130.github.io/./styles/main.css">
-
-
-  
-    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
-  
-
-  
-
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<link rel="alternate" type="application/atom+xml" title="Mr. Yang&#39;s Scientific Calculation - Atom Feed" href="https://yangxiaoyulut1130.github.io/./atom.xml">
 
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148165955-1"></script>
@@ -40,80 +26,91 @@
 
   </head>
   <body>
-    <div id="app" class="main">
-
-      <div class="sidebar" :class="{ 'full-height': menuVisible }">
-  <div class="top-container" data-aos="fade-right">
-    <div class="top-header-container">
-      <a class="site-title-container" href="https://yangxiaoyulut1130.github.io/.">
-        <img src="https://yangxiaoyulut1130.github.io/./images/avatar.png?v=1568697383131" class="site-logo">
-        <h1 class="site-title">Mr. Yang&#39;s Scientific Calculation</h1>
-      </a>
-      <div class="menu-btn" @click="menuVisible = !menuVisible">
-        <div class="line"></div>
+    <div id="app" class="main px-4 flex flex-col lg:flex-row">
+      <div id="sidebar" class="sidebar-wrapper lg:static lg:w-1/4">
+  <div class="lg:sticky top-0">
+    <div class="sidebar-content">
+      <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
+        <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
+        <a href="https://yangxiaoyulut1130.github.io/.">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://yangxiaoyulut1130.github.io/./images/avatar.png?v=1568698370406" alt="">
+        </a>
+        <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">Mr. Yang&#39;s Scientific Calculation</h1>
       </div>
-    </div>
-    <div>
       
-        
-          <a href="/" class="site-nav">
-            首页
-          </a>
-        
+        <div class="animated fadeInLeft" style="animation-delay: 0.4s">
+          <p class="my-4 text-gray-600 font-light hidden lg:block">
+            文章目录
+          </p>
+          <div class="toc-container hidden lg:block">
+            <ul class="markdownIt-TOC">
+<li><a href="#%E5%9C%86%E6%9F%B1%E5%9E%8B%E5%B0%8F%E5%AD%94%E7%9A%84%E6%89%A9%E5%BC%A0%E5%8E%9F%E7%90%86">圆柱型小孔的扩张原理</a>
+<ul>
+<li><a href="#%E9%97%AE%E9%A2%98%E7%9A%84%E9%98%90%E8%BF%B0">问题的阐述</a></li>
+<li><a href="#%E6%8E%A8%E5%AF%BC">推导</a>
+<ul>
+<li><a href="#%E5%BC%B9%E6%80%A7%E9%98%B6%E6%AE%B5%E7%9A%84%E5%BA%94%E5%8A%9B%E7%9A%84%E6%B1%82%E8%A7%A3">弹性阶段的应力的求解</a></li>
+<li><a href="#%E5%B1%88%E6%9C%8D%E5%87%86%E5%88%99%E7%9A%84%E5%BC%95%E5%85%A5">屈服准则的引入</a></li>
+<li><a href="#%E6%9E%81%E9%99%90%E5%BC%B9%E6%80%A7%E6%89%A9%E5%BC%A0%E5%8E%8B%E5%8A%9Bp_e">极限弹性扩张压力<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>e</mi></msub></mrow><annotation encoding="application/x-tex">p_e</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">e</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></a></li>
+<li><a href="#%E5%A1%91%E6%80%A7%E5%8C%BA%E7%9A%84%E5%88%86%E6%9E%90">塑性区的分析</a></li>
+<li><a href="#dfracr_pr_u%E7%9A%84%E7%A1%AE%E5%AE%9A"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><msub><mi>r</mi><mi>p</mi></msub><msub><mi>r</mi><mi>u</mi></msub></mfrac></mrow><annotation encoding="application/x-tex">\dfrac{r_p}{r_u}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.94356em;vertical-align:-0.8360000000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1075599999999999em;"><span style="top:-2.3139999999999996em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">u</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">p</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8360000000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>的确定</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
       
-        
-          <a href="/archives" class="site-nav">
-            归档
-          </a>
-        
-      
-        
-          <a href="/tags" class="site-nav">
-            标签
-          </a>
-        
-      
-        
-          <a href="/post/about" class="site-nav">
-            关于
-          </a>
-        
-      
-    </div>
-  </div>
-  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
-    <div class="social-container">
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </div>
-    <div class="site-description">
-      Life is short, you need Python!
-此生须臾如朝露，缱绻枝头待晚风
-    </div>
-    <div class="site-footer">
-      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://yangxiaoyulut1130.github.io/./atom.xml" target="_blank">RSS</a>
     </div>
   </div>
 </div>
 
-
-      <div class="main-container">
-        <div class="content-container" data-aos="fade-up">
-          <div class="post-detail">
-            <h2 class="post-title">柱孔扩张原理</h2>
-            <div class="post-date">2019-09-16</div>
-            
-            <div class="post-content">
-              <h1 id="圆柱型小孔的扩张原理">圆柱型小孔的扩张原理</h1>
+<div class="menu-container">
+  <i class="remixicon-arrow-left-line text-2xl cursor-pointer animated fadeIn close-menu-btn" onclick="closeMenu()"></i>
+  <div>
+    
+      
+        <a href="/" class="menu" style="animation-delay: 0s">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu" style="animation-delay: 0.2s">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu" style="animation-delay: 0.4s">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu" style="animation-delay: 0.6000000000000001s">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="site-footer">
+    <div class="py-4 text-gray-700">Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></div>
+    <a class="rss" href="https://yangxiaoyulut1130.github.io/./atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
+<div class="mask" onclick="closeMenu()">
+</div>
+      <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
+        <h1 class="text-3xl font-bold lg:mt-16">柱孔扩张原理</h1>
+        <div class="text-sm text-gray-700 lg:my-8">
+          2019-09-16 / 66 min read
+        </div>
+        
+        <div class="post-content yue">
+          <h1 id="圆柱型小孔的扩张原理">圆柱型小孔的扩张原理</h1>
 <h2 id="问题的阐述">问题的阐述</h2>
 <p>小孔扩张原理最初是为了研究金属成孔问题中小孔应力的集中现象而建立的。后引入岩土工程领域，用于描述沉桩的挤土效应，扩体锚杆的承载力，贯入等问题。</p>
 <p>在岩土工程中，小孔扩张问题通常是一个平面应变问题。对于平面应变问题而言，其物理方程较平面应力较复杂，为了方便，通常先按照平面应力求解，最后的对<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span></span></span></span>，$ \mu $进行替换即可。</p>
@@ -293,74 +290,150 @@ r = \infty:\sigma_r = q
 <p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow></mrow><annotation encoding="application/x-tex">
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"></span></span></span></p>
 
-            </div>
-            
-              <div class="tag-container">
-                
-                  <a href="https://yangxiaoyulut1130.github.io/./tag/aPYPNpKt9" class="tag">
-                    mechanics
-                  </a>
-                
-              </div>
-            
-            
-
-            
-              
-                <div id="gitalk-container" data-aos="fade-in"></div>
-              
-
-              
-            
-
-          </div>
-
         </div>
-      </div>
-    </div>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        
+          <a class="animated fadeInUp p-2 items-center text-sm text-gray-700 border hover:bg-gray-300 leading-none rounded-full flex lg:inline-flex m-4 " href="https://yangxiaoyulut1130.github.io/./tag/aPYPNpKt9">
+            <span class="flex-auto">mechanics</span>
+          </a>
+        
 
-<script type="application/javascript">
 
-AOS.init();
+        <div class="flex justify-between py-8">
+          
 
-hljs.initHighlightingOnLoad()
+          
+        </div>
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    menuVisible: false,
-  },
-})
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '3721a230225dac73491b',
+    clientSecret: '1aedda4b7c713164789260048beb23e9d11fdfa7',
+    repo: 'yangxiaoyulut1130.github.io',
+    owner: 'yangxiaoyulut1130',
+    admin: ['yangxiaoyulut1130'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
 
 </script>
 
+          
+
+          
+        
+
+      </div>
+    </div>
+
+    <script src="https://yangxiaoyulut1130.github.io/./media/prism.js"></script>  
+<script>
+
+Prism.highlightAll()
+
+let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+// This should probably be throttled.
+// Especially because it triggers during smooth scrolling.
+// https://lodash.com/docs/4.17.10#throttle
+// You could do like...
+// window.addEventListener("scroll", () => {
+//    _.throttle(doThatStuff, 100);
+// });
+// Only not doing it here to keep this Pen dependency-free.
+
+window.addEventListener("scroll", event => {
+  let fromTop = window.scrollY;
+
+  mainNavLinks.forEach((link, index) => {
+    let section = document.getElementById(decodeURI(link.hash).substring(1));
+    let nextSection = null
+    if (mainNavLinks[index + 1]) {
+      nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+    }
+    if (section.offsetTop <= fromTop) {
+      if (nextSection) {
+        if (nextSection.offsetTop > fromTop) {
+          link.classList.add("current");
+        } else {
+          link.classList.remove("current");    
+        }
+      } else {
+        link.classList.add("current");
+      }
+    } else {
+      link.classList.remove("current");
+    }
+  });
+});
 
 
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll(".post-feature-image.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target
+          lazyImage.style.backgroundImage = `url(${lazyImage.dataset.bg})`
+          lazyImage.classList.remove("lazy")
+          lazyImageObserver.unobserve(lazyImage)
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage)
+    })
+  } else {
+    // Possibly fall back to a more compatible method here
+  }
+});
+
+const menuContainer = document.querySelector('.menu-container')
+const menus = document.querySelectorAll('.menu-container .menu')
+const mask = document.querySelector('.mask')
+const contentWrapper = document.querySelector('.content-wrapper')
+const latestArticle = document.querySelector('.latest-article')
+const readMore = document.querySelector('.read-more')
+const indexPage = document.querySelector('.index-page')
+
+const isHome = location.pathname === '/'
+if (latestArticle) {
+  latestArticle.style.display = isHome ? 'block' : 'none'
+  readMore.style.display = isHome ? 'block' : 'none'
+  indexPage.style.display = isHome ? 'none' : 'block'
+}
+
+const openMenu = () => {
+  menuContainer.classList.add('open')
+  menus.forEach(menu => {
+    menu.classList.add('animated', 'fadeInLeft')
+  })
+  mask.classList.add('open')
+  contentWrapper.classList.add('is-second')
+}
+
+const closeMenu = () => {
+  menuContainer.classList.remove('open')
+  menus.forEach(menu => {
+    menu.classList.remove('animated', 'fadeInLeft')
+  })
+  mask.classList.remove('open')
+  contentWrapper.classList.remove('is-second')
+}
+</script>
   
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-    <script>
-
-      var gitalk = new Gitalk({
-        clientID: '3721a230225dac73491b',
-        clientSecret: '1aedda4b7c713164789260048beb23e9d11fdfa7',
-        repo: 'yangxiaoyulut1130.github.io',
-        owner: 'yangxiaoyulut1130',
-        admin: ['yangxiaoyulut1130'],
-        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-        distractionFreeMode: false  // Facebook-like distraction free mode
-      })
-
-      gitalk.render('gitalk-container')
-
-    </script>
-  
-
-  
-
-
-
-
   </body>
 </html>
