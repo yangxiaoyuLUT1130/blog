@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Mr. Yang&#39;s Scientific Calculation</title>
 <meta name="description" content="<p>此生須臾如朝露，繾綣枝頭待晚風<br>Life is short, you need Python!</p>" />
-<link rel="shortcut icon" href="https://yangxiaoyulut1130.github.io/./favicon.ico?v=1568766961309">
+<link rel="shortcut icon" href="https://yangxiaoyulut1130.github.io/./favicon.ico?v=1568773015816">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link href="https://cdn.remixicon.com/releases/v1.3.1/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
@@ -33,7 +33,7 @@
       <div class="flex lg:block p-4 lg:px-0 items-center fixed lg:static lg:block top-0 right-0 left-0 bg-white z-50">
         <i class="remixicon-menu-2-line lg:mt-4 text-2xl cursor-pointer animated fadeIn" onclick="openMenu()"></i>
         <a href="https://yangxiaoyulut1130.github.io/.">
-          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://yangxiaoyulut1130.github.io/./images/avatar.png?v=1568766961309" alt="">
+          <img class="animated fadeInLeft avatar rounded-lg mx-4 lg:mt-32 lg:mx-0 mt-0 lg:w-24 lg:h-24 w-12 w-12" src="https://yangxiaoyulut1130.github.io/./images/avatar.png?v=1568773015816" alt="">
         </a>
         <h1 class="animated fadeInLeft lg:text-4xl font-extrabold lg:mt-8 mt-0 text-xl" style="animation-delay: 0.2s">Mr. Yang&#39;s Scientific Calculation</h1>
       </div>
@@ -57,7 +57,11 @@
 <li><a href="#%E5%88%86%E5%89%B2%E7%BA%BF">分割线</a></li>
 </ul>
 </li>
-<li><a href="#%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F">数学公式</a></li>
+<li><a href="#%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F">数学公式</a>
+<ul>
+<li><a href="#latex%E5%85%AC%E5%BC%8F">latex公式</a></li>
+</ul>
+</li>
 </ul>
 
           </div>
@@ -106,22 +110,22 @@
       <div class="content-wrapper py-32 lg:p-8 lg:w-3/4 post-detail animated fadeIn">
         <h1 class="text-3xl font-bold lg:mt-16">Markdown入门</h1>
         <div class="text-sm text-gray-700 lg:my-8">
-          2019-09-17 / 2 min read
+          2019-09-17 / 3 min read
         </div>
         
           <img class="post-feature-image rounded-lg mx-auto my-4" src="https://yangxiaoyulut1130.github.io/./post-images/markdown-ru-men.jpg" alt="">
         
         <div class="post-content yue">
-          <p>在平时的文字记录时，office等一些“富文本”软件，用于记录自己的学习笔记时，会使得自己很大一部分时间用于版本，并且对于数学公式的支持也不够友好。Mrkdon是一种“标记语言”，语法相比于html而言，十分简洁。易于学习，记录效率高，能够让你专注于写作本身。</p>
+          <p>在平时的文字记录时，office等一些“富文本”软件，用于记录自己的学习笔记时，会使得自己很大一部分时间用于排本，并且对于数学公式的支持也不够友好。Mrkdon是一种“标记语言”，语法相比于html而言，十分简洁。易于学习，记录效率高，能够让你专注于写作本身。</p>
 <!-- more --> 
 <h1 id="markdown">Markdown</h1>
 <p><img src="https://yangxiaoyulut1130.github.io/./post-images/1568727733838.svg" alt=""></p>
 <blockquote>
 <p>We believe that writing is about content, about what you want to say - not about fancy formatting.<br>
-我们坚信写作写的时内容，是所思所想，而不是花样的排版格式。<br>
+我们坚信写作写的是内容，是所思所想，而不是花样的排版格式。<br>
 —— <em>Ulysses for Mac</em></p>
 </blockquote>
-<p>Markdown产生的目的在于让记录写作者能偶专注于写作本身，而非将精力注重于样式排版；其语法简洁、高效，对于代码、数学公式的支持友好。Markdown 从写作到完成，导出格式随心所欲，你可以导出HTML格式的文件用来网站发布，也可以十分方便的导出PDF格式。<br>
+<p>Markdown产生的目的在于让写作者能够专注于写作本身，而非将精力注重于样式排版；其语法简洁、高效，对于代码、数学公式的支持友好。Markdown 从写作到完成，导出格式随心所欲，你可以导出HTML格式的文件用来网站发布，也可以十分方便的导出PDF格式。<br>
 这里你可以看到官方的Markdown语法规则。</p>
 <ul>
 <li><a href="https://daringfireball.net/projects/markdown/syntax">创始人John Gruber的Markdown的语法说明</a></li>
@@ -166,10 +170,9 @@
 <li>第二</li>
 <li>第三</li>
 </ol>
-<p>注意，有序列表时，与你输入的数字大小是无关的，只要是“<br>
-数字 + 点”就行。</p>
+<p>注意，有序列表时，与你输入的数字是几是无关的，只要是“数字 + 点”就行。</p>
 <h2 id="引用">引用</h2>
-<p>当你引用一小段别处的句子，则需要使用引用格式。使用&gt;符号，加一个空格的形式。</p>
+<p>当你引用一小段别处的句子时，则需要使用引用格式。使用&gt;符号，后加一个空格的形式。</p>
 <blockquote>
 <p>这是引用，blablabla.........<br>
 人生苦短，我用Python。</p>
@@ -210,17 +213,17 @@
 </tbody>
 </table>
 <h2 id="代码框的使用">代码框的使用</h2>
-<p>在word中，代码的输入是让人十分头疼的，主要是因为字体的原因，使得代码在word中的可读性十分差；而Markdown中，对于代码的支持十分友好，易于阅读。当需要记录代码时，使用`符号进行。</p>
+<p>在word中，代码的输入是让人十分头疼的，主要是因为字体编码的原因，使得代码在word中的可读性十分差；而Markdown中，对于代码的支持十分友好，易于阅读。当需要记录代码时，使用`符号进行。</p>
 <p>行内代码采用代码前后各一个`。</p>
 <p>例如：</p>
-<p>采用C输入Hello, World!。<code>printf(&quot;Hello, World!\n&quot;);</code>。这printf函数时打印函数。</p>
-<p>当需要进行整段的代码书写时，采用三个`使用代码框。</p>
+<p>采用C输出Hello, World!。<code>printf(&quot;Hello, World!\n&quot;);</code>。printf函数是打印函数。</p>
+<p>当需要进行整段的代码书写时，采用三个`使用代码框，结束时也使用三个`。</p>
 <p>```具体的语言（如C就写C，python就写python），这样能够开启代码高亮<br>
 代码................................<br>
 ................................<br>
 ```<br>
 例如：<br>
-这时C语言代码：</p>
+这是C语言代码：</p>
 <pre><code class="language-c">int main(void)
 {
     printf(&quot;Hell, World!\n&quot;);
@@ -237,7 +240,7 @@
 <p>效果：</p>
 <hr>
 <h1 id="数学公式">数学公式</h1>
-<p>这里值罗列几个列子，数学公式的输入需要多次的练习。熟能生巧！</p>
+<p>这里只罗列几个列子，数学公式的输入需要多次的练习。熟能生巧！</p>
 <p>行内公式：采用$ 公式 $开启输入。<br>
 这是行内公式，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">y = x ^ {2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span>，这是行内公式。</p>
 <p>行间公式，采用</p>
@@ -247,7 +250,15 @@ $$</p>
 <p>来开启。例如：</p>
 <p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">y = x ^ {2}
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8641079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<h2 id="latex公式">latex公式</h2>
+<p>Markdown对于数学公式的支持是需要前端支持的，但是大多数都与latex语法相同。Markdown中数学公式的学习主要是各种数学符号的输入学习。</p>
 <p><strong>分数：</strong></p>
+<p>\frac{}{}，第一个花括号为分子，第二个花括号为分母<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>的输入为：\frac{1}{2}</p>
+<p><strong>上、下标</strong></p>
+<p>x_{a+b} 为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow></msub></mrow><annotation encoding="application/x-tex">x_{a + b}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.638891em;vertical-align:-0.208331em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">a</span><span class="mbin mtight">+</span><span class="mord mathdefault mtight">b</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span></span></span></span>。x^(a + b)为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>x</mi><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow></msup></mrow><annotation encoding="application/x-tex">x^{a + b}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8491079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8491079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">a</span><span class="mbin mtight">+</span><span class="mord mathdefault mtight">b</span></span></span></span></span></span></span></span></span></span></span></span>。注意，上、下表中的元素需要用{}括住，当只有一个元素时，可以省略。这里a+b是3个元素，没有括号时，只有a会被识别。</p>
+<p><strong>运算符号</strong><br>
+\cdot</p>
 
         </div>
 
